@@ -5,14 +5,26 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         while(true){
             System.out.print("$ ");
-            if(!sc.hasNextLine()) break;
+            if(!sc.hasNextLine())
+                break;
             String input = sc.nextLine().trim();
-            if(input.startsWith("exit")) System.exit(0);
+            if(input.startsWith("exit"))
+                System.exit(0);
             else if(input.startsWith("echo")){
                 input = input.substring(5).trim().replaceAll("\\n","\n");
                 System.out.println(input);
             }
-            else System.out.println(input+": command not found");
+            else if(input.startsWith("type")){
+                input = input.substring(5).trim();
+                switch(input){
+                    case "exit":System.out.println("echo is a shell builtin");break;
+                    case "echo":System.out.println("echo is a shell builtin");break;
+                    case "type":System.out.println("type is a shell builtin");break;
+                    default:System.out.println(input+": not found");break;
+                }
+            }
+            else
+                System.out.println(input+": command not found");
         }
     }
 }
