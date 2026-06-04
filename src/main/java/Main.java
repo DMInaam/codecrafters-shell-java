@@ -8,7 +8,11 @@ public class Main {
             if(!sc.hasNextLine()) break;
             String input = sc.nextLine().trim();
             if(input.startsWith("exit")) System.exit(0);
-            System.out.println(input+": command not found");
+            else if(input.startsWith("echo")){
+                input = input.substring(5).trim().replaceAll("\\n","\n");
+                System.out.println(input);
+            }
+            else System.out.println(input+": command not found");
         }
     }
 }
