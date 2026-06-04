@@ -23,7 +23,7 @@ public class Main {
                     case "type":System.out.println("type is a shell builtin");break;
                     default:
                         String execPath = findExec(input);
-                        if(execpath != null)
+                        if(execPath != null)
                             System.out.println(input+" is "+execPath);
                         else
                             System.out.println(input+": not found");
