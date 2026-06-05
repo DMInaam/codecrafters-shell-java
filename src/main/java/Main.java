@@ -23,7 +23,7 @@ public class Main {
                 System.out.println();
             }
             else if(command.startsWith("type")){
-                String msg = input[2];
+                String msg = input[1];
                 switch(msg){
                     case "exit":System.out.println("exit is a shell builtin");break;
                     case "echo":System.out.println("echo is a shell builtin");break;
