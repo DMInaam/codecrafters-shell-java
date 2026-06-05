@@ -10,11 +10,11 @@ public class Main {
             System.out.print("$ ");
             if(!sc.hasNextLine())
                 break;
-            String[] input = sc.nextLine().trim().split(" ");;
+            String[] input = sc.nextLine().trim().split("\\s+");;
             String command = input[0];
-            if(command.startsWith("exit"))
+            if(command.equals("exit"))
                 System.exit(0);
-            else if(command.startsWith("echo")){
+            else if(command.equals("echo")){
                 for(int i=1;i<input.length;i++){
                     System.out.print(input[i]);
                     if(i<input.length-1)
@@ -22,7 +22,7 @@ public class Main {
                 }
                 System.out.println();
             }
-            else if(command.startsWith("type")){
+            else if(command.equals("type")){
                 String msg = input[1];
                 switch(msg){
                     case "exit":System.out.println("exit is a shell builtin");break;
